@@ -92,6 +92,131 @@ Execute the process on the next page.
 
 11.) Now that we have the files downloaded and installed we will want to search for IIS in the windows search bar. Open IIS as an administrator. The program should look like this.
 
+![image](https://github.com/user-attachments/assets/5f4ad5a7-128a-4581-ae2a-6b687c3417af)
+
+12.) We will now want to register PHP from within IIS. Click on PHP Manager
+
+![image](https://github.com/user-attachments/assets/ea6de51c-cf1c-443d-9951-e5a8978d395e)
+
+Register new PHP version.
+
+![image](https://github.com/user-attachments/assets/b8cb1c8f-e471-4d71-b9e0-bea11a5d315d)
+
+You will want to provide a path to the php executable file (php-cgi.exe)). Go to C Drive -> PHP -> click on php-cgi file.
+
+![image](https://github.com/user-attachments/assets/7a98bea9-c9ca-4957-ad43-dbf650b17781)
+
+Restart the IIS server.
+
+![image](https://github.com/user-attachments/assets/3177540a-598a-4c9a-944a-16670cffbfb4)
+
+13.) Install osTicket v1.15.8 -Download osTicket from the Installation Files Folder -Extract and copy "upload" folder to c:\inetpub\wwwroot -Within c:\inetpub\root, Rename "upload" to "osTicket"
+
+Reload IIS again.
+
+14.) On IIS go to sites -> Default -> osTicket -On the right, click “Browse *:80”
+
+![image](https://github.com/user-attachments/assets/14ac9a8b-fe25-4b97-8bfe-657f925e2a5d)
+
+Some extensions are not enabled on the osTicket browser
+
+![image](https://github.com/user-attachments/assets/0c799b86-7d13-43a7-b5fb-65c82bf255d5)
+
+To enable the extensions: -Go back to IIS, sites -> Default -> osTicket -Double click PHP manager -Click "Enable or disable an extension"
+
+![image](https://github.com/user-attachments/assets/24998949-cf3c-430c-9379-03c5eb80e04a)
+
+![image](https://github.com/user-attachments/assets/adf0aaaf-5671-4369-9dcb-cec012f22297)
+
+We will want to enable three extensions from here.
+
+1.) php_imap.dll
+
+2.) php_intl.dll
+
+3.) php_opcache.dll
+
+![image](https://github.com/user-attachments/assets/5c2751ca-819d-418c-aad0-24cee096af78)
+
+15.) Once we have those extensions enabled in IIS, we are going to want to rename one of the files in our osTicket folder. Go into the file explorer and search for C;\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
+
+We are going to rename the ost-sampleconfig.php to ost-config.php
+
+Now that we have renamed the files, right click on the file and go to properties. From there click security, click on advance, and disable the inheritance. We will select Remove all inherited permissions from this object.
+
+Now we will add new permissions.
+
+Click Add
+
+![image](https://github.com/user-attachments/assets/0edd6c25-b0e5-4404-9749-febbdbdaece7)
+
+Select a principal
+![image](https://github.com/user-attachments/assets/ccf440cc-37cf-4255-9ab8-45be41c80b03)
+
+Type "Everyone" in the box.
+![image](https://github.com/user-attachments/assets/6ebc4c72-6088-4c2e-aedc-1538aa78ea54)
+
+Make sure Full Control and all the other boxes are checked.
+![image](https://github.com/user-attachments/assets/e33e20fc-8a41-4f58-a1e2-ebc8ce4f3043)
+
+Click Apply and Ok.
+
+![image](https://github.com/user-attachments/assets/f71978d5-2be5-482c-8f49-f748487c87e5)
+
+Once that is done we will continue to setup osTicket in the browser. Click Continue on the osTicket browser page. Fill out the page as required except the Database Settings at the bottom of the page. We will get to that.
+
+We will want to download and install HeidiSQL from the Installation Files.
+![image](https://github.com/user-attachments/assets/b8fb71ec-0d9a-4705-ac7d-8ab57b2b2372)
+
+When the program is open we will create a new session in it.
+![image](https://github.com/user-attachments/assets/44024626-0f14-40e7-90e3-96cbb8ea60f2)
+
+
+We want to make sure the username is root and the password is Password1.
+![image](https://github.com/user-attachments/assets/6d822f1f-e631-4129-9cfc-0c4d116810b5)
+
+Once we are connected to the session we will go back to the browser to finish setting everything up. Under the Database Settings in the browser the username will be root and the password will be Password1.
+
+We will now create a new database within HeidiSQL. In Heidi right click on the left side where is says "Unnamed", select "create new", and then select "database". Name the new database osTicket. Once we have the new database setup go back to the osTicket browser and under MySQL Database type in osTicket.
+
+![image](https://github.com/user-attachments/assets/3aac514a-9352-4c17-b9bc-91afb816b81f)
+
+The last step is to do some clean up. We will want to delete the setup folder in our system. -Delete: C:\inetpub\wwwroot\osTicket\setup Only delete the setup folder and nothing else.
+
+We then will want to set the permissions back to "Read" only in the ost-config.php file.
+![image](https://github.com/user-attachments/assets/efedb96d-f426-456b-baf4-e0f76dd2fad9)
+
+![image](https://github.com/user-attachments/assets/0ad295b3-92f8-4f2a-b75b-617aed8940c4)
+
+The last step after that is to login to osTicket on the browser.
+![image](https://github.com/user-attachments/assets/07e7c345-c610-4e7c-98d4-11453073fad2)
+
+Congrats! You have now successfully installed and setup osTicket!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
