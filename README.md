@@ -151,12 +151,15 @@ Click Add
 ![image](https://github.com/user-attachments/assets/0edd6c25-b0e5-4404-9749-febbdbdaece7)
 
 Select a principal
+
 ![image](https://github.com/user-attachments/assets/ccf440cc-37cf-4255-9ab8-45be41c80b03)
 
 Type "Everyone" in the box.
+
 ![image](https://github.com/user-attachments/assets/6ebc4c72-6088-4c2e-aedc-1538aa78ea54)
 
 Make sure Full Control and all the other boxes are checked.
+
 ![image](https://github.com/user-attachments/assets/e33e20fc-8a41-4f58-a1e2-ebc8ce4f3043)
 
 Click Apply and Ok.
@@ -169,10 +172,12 @@ We will want to download and install HeidiSQL from the Installation Files.
 ![image](https://github.com/user-attachments/assets/b8fb71ec-0d9a-4705-ac7d-8ab57b2b2372)
 
 When the program is open we will create a new session in it.
+
 ![image](https://github.com/user-attachments/assets/44024626-0f14-40e7-90e3-96cbb8ea60f2)
 
 
 We want to make sure the username is root and the password is Password1.
+
 ![image](https://github.com/user-attachments/assets/6d822f1f-e631-4129-9cfc-0c4d116810b5)
 
 Once we are connected to the session we will go back to the browser to finish setting everything up. Under the Database Settings in the browser the username will be root and the password will be Password1.
